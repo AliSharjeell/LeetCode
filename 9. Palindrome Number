@@ -1,0 +1,29 @@
+class Solution
+{
+public:
+    bool isPalindrome(int x)
+    {
+        if (x < 0)
+        {
+            return false;
+        }
+        long long int digit = x;
+        int len = 0;
+        int lencheck = x;
+        while (lencheck != 0)
+        {
+            lencheck /= 10;
+            len++;
+        }
+        len--;
+        int multiply = pow(10, len);
+        long long int ans = 0;
+        while (digit != 0)
+        {
+            ans += ((digit % 10) * multiply);
+            digit /= 10;
+            multiply /= 10;
+        }
+        return x == ans;
+    }
+};
