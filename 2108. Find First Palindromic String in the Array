@@ -1,0 +1,14 @@
+class Solution {
+public:
+    string firstPalindrome(vector<string>& words) {
+        int count =0;
+        for(int i=0;i<words.size();i++){
+            string reverseword = words[i];
+            reverse(reverseword.begin(),reverseword.end());
+            if(words[i]==reverseword){
+                return words[i];
+            }
+        }
+        return "";
+    }
+};
