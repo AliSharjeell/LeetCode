@@ -1,0 +1,23 @@
+class Solution {
+public:
+    int dominantIndex(vector<int>& nums) {
+        int high=0;
+        int index;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>high){
+                high=nums[i];
+                index=i;
+            }
+        }
+        int sechigh=0;
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>sechigh&&nums[i]!=high){
+                sechigh=nums[i];
+            }
+        }
+        if(sechigh*2<=high){
+            return index;
+        }
+        return -1;
+    }
+};
