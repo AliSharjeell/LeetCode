@@ -1,0 +1,19 @@
+class Solution {
+public:
+    string generateTheString(int n) {
+        string a = "";
+        char add = 'a';
+        if(n%2!=0)
+        {for(int i = 0 ; i < n;i++){
+            a += add;
+        }
+        }
+        else{
+            for(int i = 0 ; i < n-1;i++){
+            a += add;
+        }
+        a+=(++add);
+        }
+        return a;
+    }
+};
