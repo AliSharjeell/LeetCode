@@ -1,0 +1,21 @@
+class Solution {
+public:
+    string thousandSeparator(int n) {
+        if(to_string(n).length()<=3){
+            return to_string(n);
+        }
+        string a;
+        int count = 0;
+        while(n>0){
+            if(count>0&&count%3==0){
+                string c = a;
+                a="."+c;
+            }
+            string b = a;
+            a=to_string(n%10)+b;
+            n/=10;
+            count++;
+        }
+        return a;
+    }
+};
