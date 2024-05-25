@@ -1,0 +1,17 @@
+class Solution {
+public:
+    int largestAltitude(vector<int>& gain) {
+        vector<int> a(gain.size());
+        a[0]=gain[0];
+        for(int i = 1;i<gain.size();i++){
+            a[i]=a[i-1]+gain[i];
+        }
+        int max=0;
+        for(int i = 0;i<gain.size();i++){
+            if(a[i]>max){
+                max=a[i];
+            }
+        }
+        return max;
+    }
+};
