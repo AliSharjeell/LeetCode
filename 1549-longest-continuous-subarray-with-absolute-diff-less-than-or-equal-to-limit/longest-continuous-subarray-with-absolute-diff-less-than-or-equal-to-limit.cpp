@@ -9,12 +9,10 @@ public:
         while (e<nums.size())
         {
             int x = nums[e];
-            // add end to the minQueue keeping increasing order
             while (!minQueue.empty()&&nums[minQueue.back()]>=x){
                 minQueue.pop_back();
             } 
             minQueue.push_back(e);
-            // add end to the maxQueue keeping decreasing order
             while (!maxQueue. empty()&&nums[maxQueue. back()] <= x){
                 maxQueue.pop_back();
             } 
