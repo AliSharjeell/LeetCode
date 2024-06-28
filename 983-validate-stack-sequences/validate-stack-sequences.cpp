@@ -16,16 +16,6 @@ public:
                 }
             }
         }
-        // for(int i=pushed.size()-1;i>=0;i--){
-        //     if(j<popped.size())
-        //     {
-        //         if(popped[j]==s.top()){
-        //             s.pop();
-        //             j++;
-        //             i--;
-        //         }
-        //     }
-        // }
         return(s.empty());
     }
 };
