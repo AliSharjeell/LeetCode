@@ -1,10 +1,8 @@
 class DSU {
     vector<int> parent;
-    // vector<int> rank;
 public:
     DSU(int n) {
         parent.resize(n);
-        // rank.resize(n, 0);
         for (int i = 0; i < n; i++) {
             parent[i] = i;
         }
@@ -20,7 +18,6 @@ public:
         
         if (rootX != rootY) {
                 parent[rootY] = rootX;
-                // rank[rootX]++;
                 return true;
         }
         return false;
@@ -39,10 +36,10 @@ public:
         int aliceEdges = 0;
         int bobEdges = 0;
 
-        for (auto edge : edges) {
-            int type = edge[0];
-            int u = edge[1];
-            int v = edge[2];
+        for ( int i =0 ; i<edges.size();i++) {
+            int type = edges[i][0];
+            int u = edges[i][1];
+            int v = edges[i][2];
             
             if (type == 3) {
                 if (alice.Union(u, v) && bob.Union(u, v)) {
