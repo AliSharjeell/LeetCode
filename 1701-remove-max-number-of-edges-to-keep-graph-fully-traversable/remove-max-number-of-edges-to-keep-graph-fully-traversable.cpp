@@ -4,7 +4,7 @@ class DSU {
 public:
     DSU(int n) {
         parent.resize(n);
-        rank.resize(n, 1);
+        rank.resize(n, 0);
         for (int i = 0; i < n; i++) {
             parent[i] = i;
         }
