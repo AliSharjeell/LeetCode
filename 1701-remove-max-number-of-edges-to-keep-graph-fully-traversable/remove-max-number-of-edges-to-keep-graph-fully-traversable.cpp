@@ -19,15 +19,15 @@ public:
         int rootY = Find(y);
         
         if (rootX != rootY) {
-            if (rank[rootX] > rank[rootY]) {
-                parent[rootY] = rootX;
-            } else if (rank[rootX] < rank[rootY]) {
-                parent[rootX] = rootY;
-            } else {
+            // if (rank[rootX] > rank[rootY]) {
+            //     parent[rootY] = rootX;
+            // } else if (rank[rootX] < rank[rootY]) {
+            //     parent[rootX] = rootY;
+            // } else {
                 parent[rootY] = rootX;
                 rank[rootX]++;
-            }
-            return true;
+            // }
+                return true;
         }
         return false;
     }
