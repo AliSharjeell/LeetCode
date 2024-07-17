@@ -43,11 +43,8 @@ class Solution {
 
 public:
     vector<TreeNode*> delNodes(TreeNode* root, vector<int>& to_delete) {
-        ans.clear();
         unordered_set<int> s(to_delete.begin(), to_delete.end());
-
         dfs(root, s, true);
-
         return ans;
     }
 };
