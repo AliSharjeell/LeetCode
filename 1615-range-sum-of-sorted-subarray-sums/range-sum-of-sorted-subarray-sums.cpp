@@ -15,9 +15,8 @@ public:
         long long ans=0;
         for(int i=left-1;i<=right-1;i++){
             ans+=arr[i];
-            ans%=mod;
-            cout<<ans<<" ";
+            // ans%=mod;
         }
-        return ans;
+        return ans%=mod;
     }
 };
