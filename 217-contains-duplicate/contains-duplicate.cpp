@@ -3,9 +3,10 @@ public:
     bool containsDuplicate(vector<int>& nums) {
         unordered_set<int> set;
         for(int i:nums){
-            if(!set.insert(i).second){
+            if(set.count(i)){
                 return true;
             }
+            set.insert(i);
         }
         return false;
     }
