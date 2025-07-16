@@ -3,14 +3,15 @@ public:
     vector<vector<string>> groupAnagrams(vector<string>& strs) {
         unordered_map<string,vector<string>> prevans;
         for(int i=0;i<strs.size();i++){
-            map<char,int> storage;
+            // map<char,int> storage;
+            vector<int> storage(26,0);
             string uniquekey = "";
             for(int j=0;j<strs[i].size();j++){
-                storage[strs[i][j]]++;
+                storage[strs[i][j]-'a']++;
             }
-            for(auto i:storage){
-                uniquekey+=i.first;
-                uniquekey+=to_string(i.second);
+            for(int i=0;i<26;i++){
+               uniquekey+=to_string(i+'a');
+               uniquekey+=to_string(storage[i]);
             }
             prevans[uniquekey].push_back(strs[i]);
         }
