@@ -9,10 +9,8 @@ public:
             }
        }
        vector<vector<string>> answer;
-       int index=0;
         vector<bool> used(strs.size(),false);
         for(int i=0;i<strs.size();i++){
-        index++;
         vector<string> answergroup;
         if(used[i]==false){
          answergroup.push_back(storage[i].second);
