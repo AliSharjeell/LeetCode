@@ -2,9 +2,9 @@ class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
         unordered_set store(nums.begin(),nums.end());
-        int currSeqLength = 0;
         int maxSeqLength = 0;
         for(auto i:store){
+        int currSeqLength = 0;
             if(!store.count(i-1)){
                 int j=i;
                 while(store.count(j)){
@@ -12,7 +12,6 @@ public:
                     j++;
                 }
                 maxSeqLength = max(maxSeqLength,currSeqLength);
-                currSeqLength=0;
             }
         }
         return maxSeqLength;
