@@ -10,9 +10,7 @@ public:
                 j++;
             }
             else{
-                while(i!=j){
-                    i++;
-                }
+                i=j;
                 j++;
             }
         }
