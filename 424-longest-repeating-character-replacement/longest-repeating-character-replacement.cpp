@@ -4,7 +4,7 @@ class Solution {
         for(auto i:freq){
             sum+=i;
         }
-        return sum;
+        return sum; 
     }
 public:
     int characterReplacement(string s, int k) {
@@ -29,7 +29,7 @@ public:
                 else{
                     finalanswer = max((maxfreq+k),finalanswer);
                 }
-                while((sum(freq)-maxfreq)>k && i<s.length()){
+                while(((j-i)-maxfreq)>k && i<s.length()){
                     freq[s[i]-'A']--;
                     i++;
                     maxfreq = *max_element(freq.begin(),freq.end());
