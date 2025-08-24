@@ -1,14 +1,4 @@
 class Solution {
-    bool isAvailibleInMainStr(unordered_map<char,int>& big, unordered_map<char,int>& small){
-        for(auto i:small){
-            char letter = i.first;
-            int count = i.second;
-            if(big.find(letter)==big.end()||big[letter]<count){
-                return false;
-            }
-        }
-        return true;
-    }
 public:
     string minWindow(string s, string t) {
         if(t.length()>s.length()){
@@ -33,7 +23,6 @@ public:
                 if((j-i+1)<miniNew.first){
                     miniNew = {(j-i+1),i};
                 }
-                // cout<<str<<" ";
                 strMap[s[i]]--;
                 if(strMap[s[i]]<tMap[s[i]]){
                     have--;
