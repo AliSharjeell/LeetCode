@@ -15,22 +15,29 @@ public:
             return "";
         }
         int i=0;int j=0;
-        string str = "";
          pair<int ,int> miniNew={INT_MAX,-1};
         unordered_map<char,int> tMap;
+        int need=0;
+        int have=0;
         for(auto k:t){
             tMap[k]++;
         }
+        need=tMap.size();
         unordered_map<char,int> strMap;
         while(j<s.length()){
-            str+=s[j];
             strMap[s[j]]++;
-            while(isAvailibleInMainStr(strMap,tMap)){
+            if(strMap[s[j]]==tMap[s[j]]){
+                have++;
+            }
+            while(have==need){
                 if((j-i+1)<miniNew.first){
                     miniNew = {(j-i+1),i};
                 }
                 // cout<<str<<" ";
                 strMap[s[i]]--;
+                if(strMap[s[i]]<tMap[s[i]]){
+                    have--;
+                }
                 i++;
             }
             j++;
