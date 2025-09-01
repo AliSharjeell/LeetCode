@@ -13,14 +13,14 @@ public:
     ListNode* mergeKLists(vector<ListNode*>& lists) {
         ListNode dummy(0);
         ListNode* dummyptr = &dummy;
-        vector<ListNode*> temp(lists.size());
-        for(int i=0;i<lists.size();i++){
-            temp[i] = lists[i];
-        }
+        // vector<ListNode*> temp(lists.size());
+        // for(int i=0;i<lists.size();i++){
+        //     temp[i] = lists[i];
+        // }
         while(true){
             int cnt=0;
             for(int i=0;i<lists.size();i++){
-                if(!temp[i]){
+                if(!lists[i]){
                     cnt++;
                 }
             }
@@ -30,15 +30,15 @@ public:
             int min=INT_MAX;
             int mini=-1;
             for(int i=0;i<lists.size();i++){
-                if(temp[i]&&temp[i]->val<min){
-                    min=temp[i]->val;
+                if(lists[i]&&lists[i]->val<min){
+                    min=lists[i]->val;
                     mini=i;
                 }
             }
                     cout<<min<<" ";
-            dummyptr->next=temp[mini];
+            dummyptr->next=lists[mini];
             dummyptr=dummyptr->next;
-            temp[mini]=temp[mini]->next;
+            lists[mini]=lists[mini]->next;
         }
         return dummy.next;
     }
